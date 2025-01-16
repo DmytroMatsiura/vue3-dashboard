@@ -43,3 +43,39 @@ npm run test:unit
 ```sh
 npm run lint
 ```
+
+## Husky and Commit Conventions
+
+This project uses Husky to manage Git hooks and enforce commit message conventions.
+
+### Setting Up Husky
+
+Husky is already configured in this project. To ensure Husky hooks are installed, run:
+
+```sh
+npm run prepare
+```
+
+### Commit Message Convention
+
+Commit messages should follow the conventional commits format. The commit message should start with one of the following types:
+
+- `feat`: A new feature
+- `fix`: A bug fix
+- `ci`: Changes to our CI configuration files and scripts
+- `chore`: Other changes that don't modify `src` or `test` files
+- `docs`: Documentation only changes
+- `test`: Adding missing tests or correcting existing tests
+- `style`: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+- `refactor`: A code change that neither fixes a bug nor adds a feature
+- `perf`: A code change that improves performance
+- `build`: Changes that affect the build system or external dependencies
+- `revert`: Reverts a previous commit
+
+Example commit message:
+
+```
+feat(router): add new route for user profile
+```
+
+Husky will automatically check your commit messages against these conventions and prevent commits that do not follow the rules.
