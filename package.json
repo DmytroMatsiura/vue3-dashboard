@@ -10,10 +10,20 @@
     "test:unit": "vitest",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
-    "lint": "eslint . --fix",
-    "format": "prettier --write src/"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prepare": "husky",
+    "format": "prettier --write .",
+    "prelint": "npm run format"
+  },
+  "lint-staged": {
+    "./src/**/*.{ts,js,vue}": [
+      "npm run lint"
+    ]
   },
   "dependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.0",
     "pinia": "^2.3.0",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
