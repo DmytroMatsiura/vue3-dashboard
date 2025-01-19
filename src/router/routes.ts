@@ -3,6 +3,7 @@ import * as imports from './imports'
 export const routes = [
   {
     path: '/',
+    name: 'admin',
     component: imports.DefaultLayout,
     children: [
       {
@@ -14,6 +15,7 @@ export const routes = [
   },
   {
     path: '/auth',
+    name: 'auth',
     component: imports.AuthLayout,
     children: [
       {
