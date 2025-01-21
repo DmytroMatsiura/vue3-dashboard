@@ -9,15 +9,15 @@ import type { LoginRO } from '@/types/response/auth/login'
 import type { SignupRO } from '@/types/response/auth/signup'
 
 export const login = (payload: LoginDTO) => {
-  return http.post<APIResponse<LoginRO>>('/api/auth/login', payload)
+  return http.post<APIResponse<LoginRO>>('/auth/login', payload)
 }
 
 export const signup = (payload: SignupDTO) => {
-  return http.post<APIResponse<SignupRO>>('auth/login', payload)
+  return http.post<APIResponse<SignupRO>>('/auth/signup', payload)
 }
 
 export const resetPassword = (payload: ResetPasswordDTO) => {
-  return http.post<void>('auth/login', payload)
+  return http.post<void>('/auth/reset-password', payload)
 }
 
 export default {
