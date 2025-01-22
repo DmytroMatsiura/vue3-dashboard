@@ -1,18 +1,21 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
-import { makeServer } from './server'
+import App from '@/App.vue'
+import router from '@/router'
+import setupInterceptors from '@/services/axios.interceptors'
 
-import App from './App.vue'
-import router from './router'
-
+import { makeServer } from '@/server'
 if (import.meta.env.DEV) {
   makeServer()
 }
 
+setupInterceptors()
+
+const pinia = createPinia()
 const app = createApp(App)
 
-app.use(createPinia())
+app.use(pinia)
 app.use(router)
 
 app.mount('#app')
