@@ -1,6 +1,9 @@
 <template>
-  DefaultLayout
-  <router-view />
+  <v-app>
+    <v-main>
+      <RouterView />
+    </v-main>
+  </v-app>
 </template>
 
 <script setup lang="ts"></script>
