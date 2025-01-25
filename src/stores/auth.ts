@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 
-import { API } from '@/services/index'
+import { API } from '@/services/api/index'
 
 import { useUserStore } from '@/stores/user'
 import type { LoginDTO } from '@/types/request/auth/login'

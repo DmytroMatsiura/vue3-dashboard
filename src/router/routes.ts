@@ -16,6 +16,7 @@ export const routes = [
   {
     path: '/auth',
     name: 'auth',
+    redirect: { name: 'login' },
     component: imports.AuthLayout,
     children: [
       {
