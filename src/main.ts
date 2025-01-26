@@ -8,6 +8,8 @@ import setupInterceptors from '@/services/api/axios.interceptors'
 
 import Vue3Toastify, { type ToastContainerOptions } from 'vue3-toastify'
 
+import '@/assets/scss/main.scss'
+
 import { makeServer } from '@/server'
 if (import.meta.env.DEV) {
   makeServer()
