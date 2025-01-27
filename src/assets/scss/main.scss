@@ -1,2 +1,5 @@
 @use 'tailwindcss' as *;
-@config "../../tailwind.config.js";
+
+body {
+  background: #f5f6f7;
+}
