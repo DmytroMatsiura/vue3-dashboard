@@ -8,7 +8,5 @@
   "printWidth": 120,
   "vueIndentScriptAndStyle": true,
   "singleAttributePerLine": true,
-  "plugins": [
-    "prettier-plugin-vue"
-  ]
+  "plugins": ["prettier-plugin-vue"]
 }
