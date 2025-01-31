@@ -2,9 +2,9 @@
   <v-main>
     <v-container
       fluid
-      class="flex flex-col justify-center items-center min-h-screen bg-gray-100"
+      class="d-flex flex-column justify-center align-center h-screen bg-gray-100"
     >
-      <div class="flex justify-center items-center mb-10">
+      <div class="d-flex justify-center align-center mb-10">
         <img
           src="../../assets/images/auth/logo.png"
           alt="logo"
@@ -14,19 +14,26 @@
       <v-card
         max-width="1010"
         rounded="lg"
-        class="w-full"
+        class="w-100"
       >
-        <div class="flex flex-row shadow-lg rounded-lg overflow-hidden">
-          <!-- Left Image Section -->
-          <div
-            class="md:w-1/2 bg-cover bg-center"
-            :style="{ backgroundImage: `url(${imgUrl})` }"
-          />
+        <div class="d-flex elevation-24 rounded-lg overflow-hidden">
+          <v-row>
+            <!-- Left Image Section -->
+            <v-col cols="6">
+              <v-img
+                class="h-100"
+                cover
+                :src="imgUrl"
+              ></v-img>
+            </v-col>
 
-          <!-- Right Form Section -->
-          <div class="md:w-1/2 pa-10">
-            <RouterView />
-          </div>
+            <!-- Right Form Section -->
+            <v-col cols="6">
+              <div class="pa-10">
+                <RouterView />
+              </div>
+            </v-col>
+          </v-row>
         </div>
       </v-card>
 
