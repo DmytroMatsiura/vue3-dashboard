@@ -48,7 +48,7 @@
         class="mb-6"
       >
         Login
-        <v-icon>mdi-arrow-right</v-icon>
+        <v-icon class="ml-2">mdi-arrow-right</v-icon>
       </v-btn>
     </v-form>
 
@@ -109,5 +109,3 @@
     showPassword.value = !showPassword.value
   }
 </script>
-
-<style scoped></style>
