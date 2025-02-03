@@ -2,7 +2,7 @@ import http from '../api'
 
 import type { LoginDTO } from '@/types/request/auth/login'
 import type { SignupDTO } from '@/types/request/auth/signup'
-import type { ResetPasswordDTO } from '@/types/request/auth/resetPassword'
+import type { ResetPasswordDTO } from '@/types/request/auth/reset-password'
 
 import type { LoginRO } from '@/types/response/auth/login'
 import type { SignupRO } from '@/types/response/auth/signup'

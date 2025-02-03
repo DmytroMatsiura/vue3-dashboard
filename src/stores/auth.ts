@@ -6,7 +6,7 @@ import { API } from '@/services/api/index'
 import { useUserStore } from '@/stores/user'
 import type { LoginDTO } from '@/types/request/auth/login'
 import type { SignupDTO } from '@/types/request/auth/signup'
-import type { ResetPasswordDTO } from '@/types/request/auth/resetPassword'
+import type { ResetPasswordDTO } from '@/types/request/auth/reset-password'
 
 export const useAuthStore = defineStore('auth', () => {
   const userStore = useUserStore()
