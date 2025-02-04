@@ -10,6 +10,9 @@ export const routes = [
         path: '',
         name: 'home',
         component: imports.TheHome,
+        meta: {
+          requiresAuth: true,
+        },
       },
     ],
   },

@@ -13,7 +13,7 @@ export const useAuthStore = defineStore('auth', () => {
 
   const token = ref<null | string>(null)
 
-  const isAuthenticated = computed(() => !!token.value)
+  const isAuthenticated = computed(() => !!token.value && !!userStore.user)
 
   const login = async (payload: LoginDTO) => {
     try {
