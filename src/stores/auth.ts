@@ -7,11 +7,12 @@ import { useUserStore } from '@/stores/user'
 import type { LoginDTO } from '@/types/request/auth/login'
 import type { SignupDTO } from '@/types/request/auth/signup'
 import type { ResetPasswordDTO } from '@/types/request/auth/reset-password'
+import { lsGet } from '@/utils/local-storage'
 
 export const useAuthStore = defineStore('auth', () => {
   const userStore = useUserStore()
 
-  const token = ref<null | string>(null)
+  const token = ref<null | string>(lsGet('token'))
 
   const isAuthenticated = computed(() => !!token.value && !!userStore.user)
 

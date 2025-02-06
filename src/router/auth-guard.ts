@@ -12,6 +12,7 @@ export const authGuard = (to: RouteLocationNormalized, _from: RouteLocationNorma
 
       if (token) {
         // try to login with token and fetch user data
+        next()
       } else {
         next({ name: 'login' })
       }
