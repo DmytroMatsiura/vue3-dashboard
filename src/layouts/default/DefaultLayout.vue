@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-layout class="rounded rounded-md">
-      <v-navigation-drawer>
+      <v-navigation-drawer width="280">
         <AppSidebar />
       </v-navigation-drawer>
 
