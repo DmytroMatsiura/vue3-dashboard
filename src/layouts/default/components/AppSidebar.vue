@@ -12,6 +12,8 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import NavList from './NavList.vue'
+</script>
 
 <style scoped></style>
