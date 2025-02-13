@@ -28,7 +28,6 @@
 
 <script setup lang="ts">
   import NavSection from './NavSection.vue'
-  // import NavSection from './NavSection.vue'
 </script>
 
 <style scoped>
