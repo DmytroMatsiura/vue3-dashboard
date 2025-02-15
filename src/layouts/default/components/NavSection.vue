@@ -11,30 +11,24 @@
 </template>
 
 <script setup lang="ts">
-  import type { PropType } from 'vue'
-  import NavSectionList from './NavSectionList.vue'
+import { computed } from 'vue'
 
-  interface NavItem {
-    title: string
-    icon?: string
-    to?: string
-    children?: NavItem[]
-  }
+import type { SidebarSection } from './types'
 
-  defineProps({
-    title: {
-      type: String,
-      required: true,
-    },
-    items: {
-      type: Array as PropType<NavItem[]>,
-      default: () => [],
-    },
-  })
+import NavSectionList from './NavSectionList.vue'
+
+interface Props {
+  section: SidebarSection
+}
+
+const props = defineProps<Props>()
+
+const title = computed(() => props.section.title)
+const items = computed(() => props.section.items)
 </script>
 
 <style scoped>
-  .nav-section {
+.nav-section {
   margin-bottom: 16px;
 }
 

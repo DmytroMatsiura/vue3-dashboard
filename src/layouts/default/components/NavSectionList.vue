@@ -20,28 +20,20 @@
 </template>
 
 <script setup lang="ts">
-  import type { PropType } from 'vue'
-  import NavItem from './NavItem.vue'
-  import NavItemExpandable from './NavItemExpandable.vue'
+import type { NavItem as INavItem } from './types'
 
-  interface NavItemType {
-    title: string
-    icon?: string
-    to?: string
-    children?: NavItemType[]
-  }
+import NavItem from './NavItem.vue'
+import NavItemExpandable from './NavItemExpandable.vue'
 
-  defineProps({
-    items: {
-      type: Array as PropType<NavItemType[]>,
-      default: () => [],
-    },
-  })
+interface Props {
+  items: INavItem[]
+}
+
+defineProps<Props>()
 </script>
 
 <style scoped>
-  .nav-section-list {
-  /* Adjust styles as needed */
+.nav-section-list {
   padding: 0;
 }
 </style>

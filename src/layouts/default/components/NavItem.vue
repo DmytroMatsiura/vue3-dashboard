@@ -17,24 +17,17 @@
 </template>
 
 <script setup lang="ts">
-  import type { PropType } from 'vue'
+import type { NavItem } from './types'
 
-  interface NavItemType {
-    title: string
-    icon?: string
-    to?: string
-  }
+interface Props {
+  item: NavItem
+}
 
-  defineProps({
-    item: {
-      type: Object as PropType<NavItemType>,
-      required: true,
-    },
-  })
+defineProps<Props>()
 </script>
 
 <style scoped>
-  .nav-item {
+.nav-item {
   cursor: pointer;
 }
 </style>
