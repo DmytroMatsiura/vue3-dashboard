@@ -1,7 +1,7 @@
 <template>
   <div class="nav-section">
     <!-- Section Title -->
-    <div class="nav-section-title text-subtitle-2 px-4 py-2">
+    <div class="nav-section-title text-subtitle-2 px-6 mb-2">
       {{ title }}
     </div>
 
@@ -11,25 +11,25 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+  import { computed } from 'vue'
 
-import type { SidebarSection } from './types'
+  import type { SidebarSection } from './types'
 
-import NavSectionList from './NavSectionList.vue'
+  import NavSectionList from './NavSectionList.vue'
 
-interface Props {
-  section: SidebarSection
-}
+  interface Props {
+    section: SidebarSection
+  }
 
-const props = defineProps<Props>()
+  const props = defineProps<Props>()
 
-const title = computed(() => props.section.title)
-const items = computed(() => props.section.items)
+  const title = computed(() => props.section.title)
+  const items = computed(() => props.section.items)
 </script>
 
 <style scoped>
-.nav-section {
-  margin-bottom: 16px;
+  .nav-section {
+  margin-bottom: 24px;
 }
 
 .nav-section-title {
