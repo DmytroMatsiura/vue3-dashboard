@@ -1,5 +1,7 @@
 import '@mdi/font/css/materialdesignicons.css'
 import 'vuetify/styles'
+import '@phosphor-icons/vue'
+import { PhosphorIcons } from './phosphor-icons'
 
 import { createVuetify } from 'vuetify'
 import { aliases, mdi } from 'vuetify/iconsets/mdi'
@@ -17,6 +19,7 @@ export default createVuetify({
     aliases,
     sets: {
       mdi,
+      ph: PhosphorIcons,
     },
   },
   theme: {
@@ -36,13 +39,13 @@ export default createVuetify({
           'gray-800': '#1F2937',
           'gray-900': '#111827',
 
-          primary: '#3B82F6',
-          'primary-50': '#EFF6FF',
+          primary: '#005CE8',
+          'primary-50': '#F0F6FF',
           'primary-100': '#DBEAFE',
           'primary-200': '#BFDBFE',
           'primary-300': '#93C5FD',
           'primary-400': '#60A5FA',
-          'primary-500': '#3B82F6',
+          'primary-500': '#005CE8',
           'primary-600': '#2563EB',
           'primary-700': '#1D4ED8',
           'primary-800': '#1E40AF',
