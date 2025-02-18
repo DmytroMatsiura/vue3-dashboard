@@ -1,12 +1,13 @@
 {
   "tabWidth": 2,
+  "useTabs": false,
   "semi": false,
   "singleQuote": true,
   "quoteProps": "as-needed",
   "trailingComma": "all",
   "bracketSpacing": true,
   "printWidth": 120,
-  "vueIndentScriptAndStyle": true,
-  "singleAttributePerLine": true,
-  "plugins": ["prettier-plugin-vue"]
+  "vueIndentScriptAndStyle": false,
+  "endOfLine": "auto",
+  "singleAttributePerLine": true
 }
