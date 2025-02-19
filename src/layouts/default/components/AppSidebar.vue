@@ -32,10 +32,7 @@ const navSections = ref<SidebarSection[]>([
       {
         title: 'File Manager',
         icon: 'ph:folder-open',
-        children: [
-          { title: 'File Manager', to: '/file-manager' },
-          { title: 'Upload New File', to: '/file-manager/new ' },
-        ],
+        to: '/file-manager',
       },
     ],
   },

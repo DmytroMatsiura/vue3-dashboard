@@ -31,6 +31,14 @@ export const routes = [
           requiresAuth: true,
         },
       },
+      {
+        path: '/file-manager',
+        name: 'file-manager',
+        component: imports.TheFileManager,
+        meta: {
+          requiresAuth: true,
+        },
+      },
     ],
   },
   {
