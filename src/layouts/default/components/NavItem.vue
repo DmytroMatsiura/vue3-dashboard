@@ -2,14 +2,12 @@
   <v-list-item
     :to="item.to"
     link
-    class="nav-item"
+    active-class="active"
   >
-    <!-- Icon -->
-    <v-list-item-avatar v-if="item.icon">
+    <template #prepend>
       <v-icon>{{ item.icon }}</v-icon>
-    </v-list-item-avatar>
+    </template>
 
-    <!-- Title -->
     <v-list-item-title>
       {{ item.title }}
     </v-list-item-title>
@@ -26,8 +24,36 @@ interface Props {
 defineProps<Props>()
 </script>
 
-<style scoped>
-.nav-item {
-  cursor: pointer;
+<style scoped lang="scss">
+.v-list-item {
+  display: flex;
+  padding: 10px 24px;
+  border-left: 4px solid transparent;
+
+  :deep(.v-list-item-title) {
+    font-weight: 500;
+    color: rgb(var(--v-theme-gray-600));
+  }
+
+  :deep(.v-list-item__prepend) {
+    width: 36px;
+    color: rgb(var(--v-theme-gray-600));
+  }
+
+  &.active {
+    border-left-color: rgba(var(--v-theme-primary), 1);
+
+    :deep(.v-list-item__overlay) {
+      background-color: rgba(var(--v-theme-primary), 1);
+    }
+
+    :deep(.v-list-item-title) svg {
+      color: rgb(var(--v-theme-gray-900));
+    }
+
+    :deep(.v-list-item__prepend) svg {
+      color: rgba(var(--v-theme-primary), 1);
+    }
+  }
 }
 </style>
