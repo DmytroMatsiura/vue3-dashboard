@@ -5,11 +5,20 @@ export const routes = [
     path: '/',
     name: 'admin',
     component: imports.DefaultLayout,
+    redirect: { name: 'dashboard' },
     children: [
       {
-        path: '',
-        name: 'home',
-        component: imports.TheHome,
+        path: '/dashboard',
+        name: 'dashboard',
+        component: imports.TheDashboard,
+        meta: {
+          requiresAuth: true,
+        },
+      },
+      {
+        path: '/analytics',
+        name: 'analytics',
+        component: imports.TheAnalytics,
         meta: {
           requiresAuth: true,
         },

@@ -50,7 +50,7 @@
 </template>
 
 <script setup lang="ts">
-  import imgUrl from '@/assets/images/auth/auth-bg.png'
+import imgUrl from '@/assets/images/auth/auth-bg.png'
 </script>
 
 <style scoped></style>
