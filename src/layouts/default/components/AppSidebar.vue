@@ -22,46 +22,65 @@ const navSections = ref<SidebarSection[]>([
   {
     title: 'DASHBOARD',
     items: [
-      { title: 'Home', icon: 'mdi-home', to: '/dashboard/home' },
-      { title: 'Analytics', icon: 'mdi-chart-bar', to: '/dashboard/analytics' },
+      { title: 'Dashboard', icon: 'ph:house-line', to: '/dashboard' },
+      { title: 'Calendar', icon: 'ph:calendar', to: '/calendar' },
+      {
+        title: 'Kanban Board',
+        icon: 'ph:calendar-blank',
+        children: [
+          { title: 'Kanban Board', to: '/kanban' },
+          { title: 'Card Details', to: '/kanban-details' },
+          { title: 'Create New Card', to: '/kanban/new' },
+        ],
+      },
+      {
+        title: 'File Manager',
+        icon: 'ph:folder-open',
+        children: [
+          { title: 'File Manager', to: '/file-manager' },
+          { title: 'Upload New File', to: '/file-manager/new ' },
+        ],
+      },
     ],
   },
   {
     title: 'PAGES',
     items: [
-      { title: 'Profile', icon: 'mdi-account', to: '/pages/profile' },
       {
-        title: 'Authentication',
-        icon: 'mdi-lock',
+        title: 'Profile',
+        icon: 'ph:user',
         children: [
-          { title: 'Login', icon: 'mdi-login', to: '/pages/auth/login' },
-          { title: 'Register', icon: 'mdi-account-plus', to: '/pages/auth/register' },
-          { title: 'Forgot Password', icon: 'mdi-lock-reset', to: '/pages/auth/forgot' },
+          { title: 'Profile', to: '/profile' },
+          { title: 'Settings', to: '/settings ' },
         ],
       },
-      { title: 'Invoice', icon: 'mdi-file-document', to: '/pages/invoice' },
-    ],
-  },
-  {
-    title: 'COMPONENTS',
-    items: [
       {
-        title: 'UI Elements',
-        icon: 'mdi-widgets',
+        title: 'Invoice',
+        icon: 'ph:notebook',
         children: [
-          { title: 'Buttons', icon: 'mdi-gesture-tap-button', to: '/components/buttons' },
-          { title: 'Cards', icon: 'mdi-card', to: '/components/cards' },
-          { title: 'Alerts', icon: 'mdi-alert-circle', to: '/components/alerts' },
+          { title: 'Invoice', to: '/invoice' },
+          { title: 'Invoice Details', to: '/invoice/id' },
         ],
       },
-      { title: 'Forms', icon: 'mdi-form-select', to: '/components/forms' },
       {
-        title: 'Tables',
-        icon: 'mdi-table',
-        children: [
-          { title: 'Simple Table', icon: 'mdi-table-simple', to: '/components/tables/simple' },
-          { title: 'Data Table', icon: 'mdi-table-large', to: '/components/tables/data' },
-        ],
+        title: 'Billing',
+        icon: 'ph:credit-card',
+        to: '/billing',
+      },
+      {
+        title: 'Pricing Plans',
+        icon: 'ph:lightning',
+        to: '/plans',
+      },
+      {
+        title: 'FAQs',
+        icon: 'ph:question',
+        to: '/faq',
+      },
+      {
+        title: 'Blank Page',
+        icon: 'ph:note-blank',
+        to: '/blank-page',
       },
     ],
   },
