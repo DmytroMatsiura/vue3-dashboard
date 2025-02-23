@@ -11,24 +11,24 @@
 </template>
 
 <script setup lang="ts">
-  import { computed } from 'vue'
+import { computed } from 'vue'
 
-  import type { SidebarSection } from './types'
+import type { SidebarSection } from './types'
 
-  import NavSectionList from './NavSectionList.vue'
+import NavSectionList from './NavSectionList.vue'
 
-  interface Props {
-    section: SidebarSection
-  }
+interface Props {
+  section: SidebarSection
+}
 
-  const props = defineProps<Props>()
+const props = defineProps<Props>()
 
-  const title = computed(() => props.section.title)
-  const items = computed(() => props.section.items)
+const title = computed(() => props.section.title)
+const items = computed(() => props.section.items)
 </script>
 
 <style scoped>
-  .nav-section {
+.nav-section {
   margin-bottom: 24px;
 }
 
