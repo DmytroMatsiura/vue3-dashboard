@@ -78,34 +78,34 @@
 </template>
 
 <script setup lang="ts">
-  import { useAuthStore } from '@/stores/auth'
-  import type { LoginDTO } from '@/types/request/auth/login'
-  import { ref } from 'vue'
-  import { useRouter } from 'vue-router'
+import { useAuthStore } from '@/stores/auth'
+import type { LoginDTO } from '@/types/request/auth/login'
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 
-  const router = useRouter()
-  const authStore = useAuthStore()
+const router = useRouter()
+const authStore = useAuthStore()
 
-  const email = ref('')
-  const password = ref('')
-  const showPassword = ref(false)
+const email = ref('')
+const password = ref('')
+const showPassword = ref(false)
 
-  const login = async () => {
-    try {
-      const payload: LoginDTO = {
-        email: email.value,
-        password: password.value,
-      }
-
-      await authStore.login(payload)
-
-      router.push('/')
-    } catch (error) {
-      console.error('Invalid email or password ', (error as Error).message)
+const login = async () => {
+  try {
+    const payload: LoginDTO = {
+      email: email.value,
+      password: password.value,
     }
-  }
 
-  const togglePassword = () => {
-    showPassword.value = !showPassword.value
+    await authStore.login(payload)
+
+    router.push('/')
+  } catch (error) {
+    console.error('Invalid email or password ', (error as Error).message)
   }
+}
+
+const togglePassword = () => {
+  showPassword.value = !showPassword.value
+}
 </script>

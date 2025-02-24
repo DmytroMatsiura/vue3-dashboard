@@ -1,18 +1,19 @@
 <template>
   <v-list-group
     prepend-icon="mdi-chevron-down"
-    :value="open"
-    @click:prepend="toggleGroup"
-    class="nav-item-expandable"
+    :value="item.title"
   >
     <!-- Activator Slot -->
-    <template #activator>
-      <v-list-item-avatar v-if="item.icon">
-        <v-icon>{{ item.icon }}</v-icon>
-      </v-list-item-avatar>
-      <v-list-item-title>
-        {{ item.title }}
-      </v-list-item-title>
+    <template v-slot:activator="{ props }">
+      <v-list-item v-bind="props">
+        <template #prepend>
+          <v-icon>{{ item.icon }}</v-icon>
+        </template>
+
+        <v-list-item-title>
+          {{ item.title }}
+        </v-list-item-title>
+      </v-list-item>
     </template>
 
     <!-- Children -->
@@ -33,8 +34,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-
 import type { NavItem as INavItem } from './types'
 
 import NavItem from './NavItem.vue'
@@ -45,16 +44,4 @@ interface Props {
 }
 
 defineProps<Props>()
-
-const open = ref(false)
-
-function toggleGroup() {
-  open.value = !open.value
-}
 </script>
-
-<style scoped>
-.nav-item-expandable {
-  cursor: pointer;
-}
-</style>
