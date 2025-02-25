@@ -37,27 +37,27 @@
 </template>
 
 <script setup lang="ts">
-  import { useAuthStore } from '@/stores/auth'
-  import type { ResetPasswordDTO } from '@/types/request/auth/resetPassword'
-  import { ref } from 'vue'
-  import { useRouter } from 'vue-router'
+import { useAuthStore } from '@/stores/auth'
+import type { ResetPasswordDTO } from '@/types/request/auth/resetPassword'
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 
-  const router = useRouter()
-  const authStore = useAuthStore()
+const router = useRouter()
+const authStore = useAuthStore()
 
-  const email = ref('')
+const email = ref('')
 
-  const resetPassword = async () => {
-    try {
-      const payload: ResetPasswordDTO = {
-        email: email.value,
-      }
-
-      await authStore.resetPassword(payload)
-
-      router.push({ name: 'login' })
-    } catch (error) {
-      console.error('Invalid email or password ', (error as Error).message)
+const resetPassword = async () => {
+  try {
+    const payload: ResetPasswordDTO = {
+      email: email.value,
     }
+
+    await authStore.resetPassword(payload)
+
+    router.push({ name: 'login' })
+  } catch (error) {
+    console.error('Invalid email or password ', (error as Error).message)
   }
+}
 </script>

@@ -118,41 +118,41 @@
 </template>
 
 <script setup lang="ts">
-  import { useAuthStore } from '@/stores/auth'
-  import type { SignupDTO } from '@/types/request/auth/signup'
-  import { ref } from 'vue'
-  import { useRouter } from 'vue-router'
+import { useAuthStore } from '@/stores/auth'
+import type { SignupDTO } from '@/types/request/auth/signup'
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 
-  const router = useRouter()
-  const authStore = useAuthStore()
+const router = useRouter()
+const authStore = useAuthStore()
 
-  const name = ref('')
-  const email = ref('')
-  const password = ref('')
-  const confirmPassword = ref('')
-  const showPassword = ref(false)
-  const showConfirmPassword = ref(false)
+const name = ref('')
+const email = ref('')
+const password = ref('')
+const confirmPassword = ref('')
+const showPassword = ref(false)
+const showConfirmPassword = ref(false)
 
-  const signup = async () => {
-    try {
-      const payload: SignupDTO = {
-        email: email.value,
-        password: password.value,
-      }
-
-      await authStore.signup(payload)
-
-      router.push('/')
-    } catch (error) {
-      console.error('Invalid email or password ', (error as Error).message)
+const signup = async () => {
+  try {
+    const payload: SignupDTO = {
+      email: email.value,
+      password: password.value,
     }
-  }
 
-  const togglePassword = () => {
-    showPassword.value = !showPassword.value
-  }
+    await authStore.signup(payload)
 
-  const toggleConfirmPassword = () => {
-    showPassword.value = !showPassword.value
+    router.push('/')
+  } catch (error) {
+    console.error('Invalid email or password ', (error as Error).message)
   }
+}
+
+const togglePassword = () => {
+  showPassword.value = !showPassword.value
+}
+
+const toggleConfirmPassword = () => {
+  showPassword.value = !showPassword.value
+}
 </script>
