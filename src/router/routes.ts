@@ -16,9 +16,9 @@ export const routes = [
         },
       },
       {
-        path: '/analytics',
-        name: 'analytics',
-        component: imports.TheAnalytics,
+        path: '/calendar',
+        name: 'calendar',
+        component: imports.TheCalendar,
         meta: {
           requiresAuth: true,
         },
