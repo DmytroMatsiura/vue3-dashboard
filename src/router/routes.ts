@@ -23,6 +23,14 @@ export const routes = [
           requiresAuth: true,
         },
       },
+      {
+        path: '/kanban',
+        name: 'kanban',
+        component: imports.TheKanban,
+        meta: {
+          requiresAuth: true,
+        },
+      },
     ],
   },
   {

@@ -27,11 +27,7 @@ const navSections = ref<SidebarSection[]>([
       {
         title: 'Kanban Board',
         icon: 'ph:calendar-blank',
-        children: [
-          { title: 'Kanban Board', to: '/kanban' },
-          { title: 'Card Details', to: '/kanban-details' },
-          { title: 'Create New Card', to: '/kanban/new' },
-        ],
+        to: '/kanban',
       },
       {
         title: 'File Manager',
