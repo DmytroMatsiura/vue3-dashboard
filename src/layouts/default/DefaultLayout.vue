@@ -9,11 +9,10 @@
         <AppHeader />
       </v-app-bar>
 
-      <v-main
-        class="d-flex align-center justify-center"
-        style="min-height: 300px"
-      >
-        <RouterView />
+      <v-main>
+        <AppMain>
+          <RouterView />
+        </AppMain>
       </v-main>
     </v-layout>
   </v-app>
@@ -22,6 +21,7 @@
 <script setup lang="ts">
 import AppHeader from './components/AppHeader.vue'
 import AppSidebar from './components/AppSidebar.vue'
+import AppMain from './components/AppMain.vue'
 </script>
 
 <style scoped></style>
