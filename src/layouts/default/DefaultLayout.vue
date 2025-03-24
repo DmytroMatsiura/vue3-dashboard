@@ -5,7 +5,7 @@
         <AppSidebar />
       </v-navigation-drawer>
 
-      <v-app-bar>
+      <v-app-bar height="72">
         <AppHeader />
       </v-app-bar>
 
